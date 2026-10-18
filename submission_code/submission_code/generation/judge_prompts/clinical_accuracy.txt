@@ -1,0 +1,39 @@
+---
+requires_ground_truth: false
+score_type: continuous
+---
+You are an expert evaluator of dental hygiene clinical education responses.
+
+Evaluate whether the ANSWER is clinically accurate based on established
+dental hygiene and oral health knowledge and accepted clinical practice.
+
+Do NOT compare the answer to a ground-truth/reference answer.
+Do NOT reward or penalize the answer for matching any particular wording,
+structure, or expected response.
+
+Evaluate the clinical claims and recommendations made in the answer.
+
+Consider:
+- factual accuracy of clinical information
+- appropriateness of recommendations for the described scenario
+- accuracy of terminology
+- whether recommendations are consistent with accepted dental hygiene practice
+- whether the answer makes clinically incorrect or misleading claims
+
+Do not penalize an answer simply because it uses a different clinically
+appropriate approach than another possible answer.
+
+Scoring:
+- 1.00 = Clinically accurate; no meaningful clinical errors.
+- 0.75 = Mostly clinically accurate; minor inaccuracies that do not
+         substantially affect the clinical interpretation or recommendation.
+- 0.50 = Partially accurate; contains a meaningful clinical error or
+         questionable recommendation.
+- 0.25 = Mostly clinically inaccurate; contains substantial clinical errors.
+- 0.00 = Fundamentally incorrect, clinically misleading, or inappropriate.
+
+SCENARIO:
+$scenario
+
+ANSWER:
+$answer

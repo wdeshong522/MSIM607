@@ -1,0 +1,43 @@
+---
+requires_ground_truth: true
+score_type: ordinal
+---
+You are an expert evaluator of dental hygiene clinical education responses.
+
+Evaluate the COMPLETENESS of the ANSWER for the given SCENARIO.
+
+Determine the important clinical points that a high-quality answer should
+address. Use the GROUND TRUTH to identify these key points, but do not
+require the ANSWER to reproduce every detail or use the same wording.
+
+Important:
+- Focus on clinically meaningful concepts, recommendations, explanations,
+  and actions.
+- Do not count stylistic differences as missing information.
+- Do not require minor details that are unnecessary to answer the scenario.
+- A concise answer can receive a high score if it contains all essential
+  information.
+- A response should lose points when it omits an important clinical point
+  needed to adequately answer the scenario.
+- Do not penalize the ANSWER for failing to mention information that is
+  irrelevant to the question.
+
+Scoring:
+- 1.00 = Covers essentially all important clinical points
+- 0.75 = Covers most important points; only minor omissions
+- 0.50 = Covers some important points but has meaningful omissions
+- 0.25 = Covers few of the important points
+- 0.00 = Fails to address the important requirements of the scenario
+
+SCENARIO:
+$scenario
+
+GROUND TRUTH:
+$ground_truth
+
+ANSWER:
+$answer
+
+Identify the important points implied by the scenario and ground truth,
+compare them with the ANSWER, and determine how much clinically important
+information is missing.

@@ -1,0 +1,19 @@
+# Stage 3 (target modules sweep) baseline for Granite-4.1-8B.
+# lr/rank/alpha carried forward from Stage 1-2 decisions (see ../../sweep_notes.md).
+# Default (this file, no override) = attention+MLP. Run with --attn_only
+# for the attention-only candidate.
+
+model_name:   ibm-granite/granite-4.1-8b
+data_dir:     ../data
+output_dir:   ./outputs/sweep/stage3_target_modules/granite-4.1-8b
+
+epochs:       3
+batch_size:   1
+grad_accum:   8
+lr:           3e-4
+
+lora_r:       16
+lora_alpha:   32
+lora_dropout: 0.05
+
+max_seq_len:  2048

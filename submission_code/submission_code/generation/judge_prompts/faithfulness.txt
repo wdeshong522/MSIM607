@@ -1,0 +1,44 @@
+---
+requires_ground_truth: false
+score_type: ordinal
+---
+You are an expert evaluator of dental hygiene clinical education responses.
+
+Evaluate the FAITHFULNESS of the ANSWER to the information provided in
+the SCENARIO.
+
+Faithfulness means that the ANSWER appropriately bases its statements,
+conclusions, and recommendations on information that is actually provided
+or reasonably supported by the SCENARIO and established clinical knowledge.
+
+Important:
+- Do not assume that an unstated patient characteristic is true.
+- The ANSWER may provide general clinical knowledge that is not explicitly
+  written in the scenario. That is not automatically unfaithful.
+- Penalize the answer when it presents unsupported assumptions about the
+  patient as established facts.
+- Penalize invented patient history, symptoms, measurements, diagnoses,
+  medications, behaviors, examination findings, or treatment history.
+- Penalize conclusions that require information that was not provided.
+- Do not penalize reasonable clinical inferences that are clearly presented
+  as possibilities or recommendations rather than established facts.
+- Faithfulness is about whether the response stays grounded in the available
+  information, not whether it uses the same wording as the ground truth.
+
+Scoring:
+- 1.00 = Fully grounded; no meaningful unsupported assumptions
+- 0.75 = Mostly grounded; minor unsupported inference
+- 0.50 = Contains one or more meaningful unsupported assumptions
+- 0.25 = Frequently makes unsupported assumptions or conclusions
+- 0.00 = Predominantly fabricated, contradictory, or disconnected from
+         the information provided
+
+SCENARIO:
+$scenario
+
+ANSWER:
+$answer
+
+Identify whether the ANSWER introduces information or conclusions that
+cannot reasonably be supported by the SCENARIO. Distinguish reasonable
+clinical inference from unsupported claims.

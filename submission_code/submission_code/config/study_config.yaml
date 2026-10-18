@@ -1,0 +1,46 @@
+# Shared configuration for the LLM-as-judge validity study.
+# Precedence (highest to lowest): environment variable > this file > hardcoded default.
+# Loaded by study_config.py, used by generate_judge_examples.py,
+# generate_new_scenarios.py, and score_judge_examples.py.
+#
+# Model registry (which base model / adapter / Ollama name goes with which
+# key) stays in config/ollama_models.yaml, not here — this file is only for
+# run-level parameters that apply across the whole study.
+
+ollama_base_url: "http://localhost:11434"
+
+# Registered with Ollama and confirmed working as of this study's judge
+# testing session. If you swap judge models, update this to match whatever
+# name it's actually registered under - score_judge_examples.py's
+# ensure_judge_model() checks this against Ollama's live registry before
+# running, so a stale value here fails fast rather than silently.
+judge_model: "qwen3.8:27b"
+
+# The active model roster for this test. Must be keys that exist in
+# config/ollama_models.yaml AND are actually registered with Ollama -
+# the driver checks both before running anything.
+#
+# Current roster: Llama 3.1-8B, Phi-4-mini, Qwen3-8B, Granite 4.1-8B.
+# (Ministral 3 8B was dropped from the study and replaced by Granite
+# 4.1-8B.) All four are trained and registered with Ollama, both as
+# fine-tuned models and as "-base" (untrained) comparison entries in
+# ollama_models.yaml.
+study_models:
+  - "granite-4.1-8B-v2"
+  - "qwen3-8B-v2"
+
+
+db_file: "generation/outputs/judge_scores.db"
+data_dir: "data"
+
+# Per-model example count. 188 is the full held-out set (10% of the
+# corpus, seed=42 split - see load_eval_examples() in
+# generate_judge_examples.py), used in full rather than a smaller sample
+# since that constraint doesn't apply to automated LLM-judge/BERTScore
+# scoring the way it did when human-reviewer bandwidth was the bottleneck.
+max_examples: 30
+
+temperature: 0.3
+num_predict: 1536
+timeout: 300
+rescore: false

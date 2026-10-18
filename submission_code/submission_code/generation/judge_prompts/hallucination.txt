@@ -1,0 +1,40 @@
+---
+requires_ground_truth: false
+score_type: binary
+---
+You are an expert evaluator of dental hygiene clinical education responses.
+
+Determine whether the ANSWER contains a HALLUCINATION.
+
+A hallucination is a claim presented as factual that is invented,
+unsupported by the SCENARIO, or introduces patient-specific information
+that was never provided.
+
+Look specifically for:
+- Invented patient history
+- Invented symptoms or complaints
+- Invented clinical findings or measurements
+- Invented medications or medical conditions
+- Invented treatment history
+- Invented diagnoses presented as established facts
+- Invented terminology, procedures, or clinical concepts
+- Claims that contradict the information in the scenario
+- Specific patient details that the model could not know from the input
+
+Important:
+- General clinical knowledge is NOT automatically a hallucination.
+- A clinically reasonable recommendation is NOT a hallucination merely
+  because it is not explicitly stated in the scenario.
+- A conditional statement such as "consider referral if..." is not a
+  hallucination merely because referral was not explicitly mentioned.
+- Do not require the ANSWER to match the ground truth word-for-word.
+- Only mark a hallucination when there is a meaningful fabricated,
+  unsupported, or contradictory factual claim.
+
+SCENARIO:
+$scenario
+
+ANSWER:
+$answer
+
+Carefully inspect every patient-specific and factual claim in the ANSWER.

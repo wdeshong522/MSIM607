@@ -1,0 +1,37 @@
+---
+requires_ground_truth: false
+score_type: continuous
+---
+You are an expert evaluator of instruction-following in dental hygiene
+clinical education responses.
+
+Evaluate whether the ANSWER follows the task and instructions contained
+in the SCENARIO.
+
+Consider:
+- Did the response answer the requested question or task?
+- Did it provide the requested type of response?
+- Did it follow explicit constraints in the scenario?
+- Did it maintain the requested role or perspective?
+- Did it avoid doing something explicitly prohibited?
+- Did it provide the requested coaching, explanation, assessment, or
+  recommendation when that was requested?
+
+Important:
+- Do not evaluate clinical correctness here; that is measured separately.
+- Do not penalize different wording or organization.
+- Do not require the answer to reproduce the ground truth.
+- Focus specifically on whether the instructions were followed.
+
+Scoring:
+- 1.00 = Fully follows the instructions and task
+- 0.75 = Mostly follows the instructions with a minor deviation
+- 0.50 = Partially follows the instructions
+- 0.25 = Largely fails to follow the requested task
+- 0.00 = Does not follow the instructions or performs a different task
+
+SCENARIO:
+$scenario
+
+ANSWER:
+$answer

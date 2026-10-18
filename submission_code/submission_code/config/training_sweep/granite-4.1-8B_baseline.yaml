@@ -1,0 +1,30 @@
+# Baseline config for the Granite-4.1-8B hyperparameter sweep.
+# Precedence (highest to lowest): CLI flag > this file > FALLBACK_DEFAULTS
+# in lora_finetune.py. Matches the precedence convention used in
+# config/study_config.yaml.
+#
+# Usage — Stage 1 (LoRA rank sweep), one candidate per command, output_dir
+# auto-suffixed by lora_finetune.py so candidates never overwrite each other:
+#   python lora_finetune.py --config config/training_sweep/granite-4.1-8B_baseline.yaml --lora_r 8
+#   python lora_finetune.py --config config/training_sweep/granite-4.1-8B_baseline.yaml --lora_r 16
+#   python lora_finetune.py --config config/training_sweep/granite-4.1-8B_baseline.yaml --lora_r 32
+#   python lora_finetune.py --config config/training_sweep/granite-4.1-8B_baseline.yaml --lora_r 64
+#
+# When Stage 1 picks a winner, update lora_r/lora_alpha below to that value
+# before starting Stage 2 (--lr candidates), and so on down the staged plan:
+# rank -> learning rate -> target modules -> alpha ratio -> epochs -> trust-tier lambda.
+
+model_name:   ibm-granite/granite-4.1-8b
+data_dir: ../data
+output_dir:   ./outputs/sweep/granite-4.1-8b
+
+epochs:       3
+batch_size:   1
+grad_accum:   8
+lr:           2e-4
+
+lora_r:       16
+lora_alpha:   32
+lora_dropout: 0.05
+
+max_seq_len:  2048

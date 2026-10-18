@@ -1,0 +1,507 @@
+{
+  "example_id": "PV2-001",
+  "learner_level": "beginner",
+  "patient": {
+    "age": 54,
+    "sex": null,
+    "smoking_status": "smoker",
+    "chief_complaint": "Routine periodontal maintenance visit."
+  },
+  "diagnosis": {
+    "classification": "periodontitis",
+    "extent": "generalized",
+    "stage": "III",
+    "grade": "B"
+  },
+  "teeth": {
+    "1": {
+      "present": false,
+      "type": "third_molar",
+      "clinical": null,
+      "geometry": { "rotationDeg": {"twist": 0, "tipMD": 0, "tipBL": 0}, "translationMm": {"x": 0.0, "y": 0.0, "z": 0.0}, "scale": 0.0 }
+    },
+    "2": {
+      "present": true,
+      "type": "second_molar",
+      "clinical": {
+        "conditions": ["periodontitis"],
+        "probingDepth": [5, 4, 6, 5, 4, 5],
+        "recession":    [2, 2, 1, 1, 1, 0],
+        "cal":          [7, 6, 7, 6, 5, 5],
+        "bleeding":     [true, true, true, true, false, false],
+        "mobility": 1,
+        "furcation": "II",
+        "calculus": "moderate"
+      },
+      "geometry": { "rotationDeg": {"twist": 4, "tipMD": 0, "tipBL": 0}, "translationMm": {"x": 0.0, "y": 0.0, "z": 0.0}, "scale": 1.0 }
+    },
+    "3": {
+      "present": true,
+      "type": "first_molar",
+      "clinical": {
+        "conditions": ["periodontitis"],
+        "probingDepth": [4, 3, 5, 4, 3, 4],
+        "recession":    [2, 1, 1, 1, 0, 0],
+        "cal":          [6, 4, 6, 5, 3, 4],
+        "bleeding":     [true, true, false, true, false, false],
+        "mobility": 0,
+        "furcation": "I",
+        "calculus": "moderate"
+      },
+      "geometry": { "rotationDeg": {"twist": 3, "tipMD": 0, "tipBL": 0}, "translationMm": {"x": 0.0, "y": 0.0, "z": 0.0}, "scale": 1.0 }
+    },
+    "4": {
+      "present": true,
+      "type": "second_premolar",
+      "clinical": {
+        "conditions": [],
+        "probingDepth": [2, 2, 2, 2, 2, 2],
+        "recession":    [0, 0, 0, 0, 0, 0],
+        "cal":          [2, 2, 2, 2, 2, 2],
+        "bleeding":     [false, false, false, false, false, false],
+        "mobility": 0,
+        "furcation": null,
+        "calculus": "none"
+      },
+      "geometry": { "rotationDeg": {"twist": 0, "tipMD": 0, "tipBL": 0}, "translationMm": {"x": 0.0, "y": 0.0, "z": 0.0}, "scale": 1.0 }
+    },
+    "5": {
+      "present": true,
+      "type": "first_premolar",
+      "clinical": {
+        "conditions": [],
+        "probingDepth": [2, 2, 2, 2, 2, 2],
+        "recession":    [0, 0, 0, 0, 0, 0],
+        "cal":          [2, 2, 2, 2, 2, 2],
+        "bleeding":     [false, false, false, false, false, false],
+        "mobility": 0,
+        "furcation": null,
+        "calculus": "none"
+      },
+      "geometry": { "rotationDeg": {"twist": 0, "tipMD": 0, "tipBL": 0}, "translationMm": {"x": 0.0, "y": 0.0, "z": 0.0}, "scale": 1.0 }
+    },
+    "6": {
+      "present": true,
+      "type": "canine",
+      "clinical": {
+        "conditions": ["recession"],
+        "probingDepth": [2, 2, 2, 2, 2, 2],
+        "recession":    [3, 3, 2, 0, 0, 1],
+        "cal":          [5, 5, 4, 2, 2, 3],
+        "bleeding":     [false, false, false, false, false, false],
+        "mobility": 0,
+        "furcation": null,
+        "calculus": "light"
+      },
+      "geometry": { "rotationDeg": {"twist": 5, "tipMD": 4, "tipBL": 1}, "translationMm": {"x": 0.0, "y": 0.0, "z": 0.0}, "scale": 1.0 }
+    },
+    "7": {
+      "present": true,
+      "type": "lateral_incisor",
+      "clinical": {
+        "conditions": ["gingivitis"],
+        "probingDepth": [3, 2, 3, 3, 2, 3],
+        "recession":    [1, 1, 0, 1, 0, 0],
+        "cal":          [4, 3, 3, 4, 2, 3],
+        "bleeding":     [true, true, true, true, true, false],
+        "mobility": 0,
+        "furcation": null,
+        "calculus": "light"
+      },
+      "geometry": { "rotationDeg": {"twist": 14, "tipMD": 0, "tipBL": 0}, "translationMm": {"x": 0.0, "y": 0.0, "z": 0.0}, "scale": 1.0 }
+    },
+    "8": {
+      "present": true,
+      "type": "central_incisor",
+      "clinical": {
+        "conditions": [],
+        "probingDepth": [2, 2, 2, 2, 2, 2],
+        "recession":    [0, 0, 0, 0, 0, 0],
+        "cal":          [2, 2, 2, 2, 2, 2],
+        "bleeding":     [false, false, false, false, false, false],
+        "mobility": 0,
+        "furcation": null,
+        "calculus": "none"
+      },
+      "geometry": { "rotationDeg": {"twist": 0, "tipMD": 0, "tipBL": 0}, "translationMm": {"x": 0.0, "y": 0.0, "z": 0.0}, "scale": 1.0 }
+    },
+    "9": {
+      "present": true,
+      "type": "central_incisor",
+      "clinical": {
+        "conditions": [],
+        "probingDepth": [2, 2, 2, 2, 2, 2],
+        "recession":    [0, 0, 0, 0, 0, 0],
+        "cal":          [2, 2, 2, 2, 2, 2],
+        "bleeding":     [false, false, false, false, false, false],
+        "mobility": 0,
+        "furcation": null,
+        "calculus": "none"
+      },
+      "geometry": { "rotationDeg": {"twist": 0, "tipMD": 0, "tipBL": 0}, "translationMm": {"x": 0.0, "y": 0.0, "z": 0.0}, "scale": 1.0 }
+    },
+    "10": {
+      "present": true,
+      "type": "lateral_incisor",
+      "clinical": {
+        "conditions": [],
+        "probingDepth": [2, 2, 2, 2, 2, 2],
+        "recession":    [0, 0, 0, 0, 0, 0],
+        "cal":          [2, 2, 2, 2, 2, 2],
+        "bleeding":     [false, false, false, false, false, false],
+        "mobility": 0,
+        "furcation": null,
+        "calculus": "none"
+      },
+      "geometry": { "rotationDeg": {"twist": 0, "tipMD": 0, "tipBL": 0}, "translationMm": {"x": 0.0, "y": 0.0, "z": 0.0}, "scale": 1.0 }
+    },
+    "11": {
+      "present": true,
+      "type": "canine",
+      "clinical": {
+        "conditions": [],
+        "probingDepth": [2, 2, 2, 2, 2, 2],
+        "recession":    [0, 0, 0, 0, 0, 0],
+        "cal":          [2, 2, 2, 2, 2, 2],
+        "bleeding":     [false, false, false, false, false, false],
+        "mobility": 0,
+        "furcation": null,
+        "calculus": "none"
+      },
+      "geometry": { "rotationDeg": {"twist": 0, "tipMD": 0, "tipBL": 0}, "translationMm": {"x": 0.0, "y": 0.0, "z": 0.0}, "scale": 1.0 }
+    },
+    "12": {
+      "present": true,
+      "type": "first_premolar",
+      "clinical": {
+        "conditions": [],
+        "probingDepth": [2, 2, 2, 2, 2, 2],
+        "recession":    [0, 0, 0, 0, 0, 0],
+        "cal":          [2, 2, 2, 2, 2, 2],
+        "bleeding":     [false, false, false, false, false, false],
+        "mobility": 0,
+        "furcation": null,
+        "calculus": "none"
+      },
+      "geometry": { "rotationDeg": {"twist": 0, "tipMD": 0, "tipBL": 0}, "translationMm": {"x": 0.0, "y": 0.0, "z": 0.0}, "scale": 1.0 }
+    },
+    "13": {
+      "present": true,
+      "type": "second_premolar",
+      "clinical": {
+        "conditions": [],
+        "probingDepth": [2, 2, 2, 2, 2, 2],
+        "recession":    [0, 0, 0, 0, 0, 0],
+        "cal":          [2, 2, 2, 2, 2, 2],
+        "bleeding":     [false, false, false, false, false, false],
+        "mobility": 0,
+        "furcation": null,
+        "calculus": "none"
+      },
+      "geometry": { "rotationDeg": {"twist": 0, "tipMD": 0, "tipBL": 0}, "translationMm": {"x": 0.0, "y": 0.0, "z": 0.0}, "scale": 1.0 }
+    },
+    "14": {
+      "present": true,
+      "type": "first_molar",
+      "clinical": {
+        "conditions": [],
+        "probingDepth": [2, 2, 2, 2, 2, 2],
+        "recession":    [0, 0, 0, 0, 0, 0],
+        "cal":          [2, 2, 2, 2, 2, 2],
+        "bleeding":     [false, false, false, false, false, false],
+        "mobility": 0,
+        "furcation": null,
+        "calculus": "none"
+      },
+      "geometry": { "rotationDeg": {"twist": 0, "tipMD": 0, "tipBL": 0}, "translationMm": {"x": 0.0, "y": 0.0, "z": 0.0}, "scale": 1.0 }
+    },
+    "15": {
+      "present": true,
+      "type": "second_molar",
+      "clinical": {
+        "conditions": [],
+        "probingDepth": [2, 2, 2, 2, 2, 2],
+        "recession":    [0, 0, 0, 0, 0, 0],
+        "cal":          [2, 2, 2, 2, 2, 2],
+        "bleeding":     [false, false, false, false, false, false],
+        "mobility": 0,
+        "furcation": null,
+        "calculus": "none"
+      },
+      "geometry": { "rotationDeg": {"twist": 0, "tipMD": 0, "tipBL": 0}, "translationMm": {"x": 0.0, "y": 0.0, "z": 0.0}, "scale": 1.0 }
+    },
+    "16": {
+      "present": true,
+      "type": "third_molar",
+      "clinical": {
+        "conditions": [],
+        "probingDepth": [2, 2, 2, 2, 2, 2],
+        "recession":    [0, 0, 0, 0, 0, 0],
+        "cal":          [2, 2, 2, 2, 2, 2],
+        "bleeding":     [false, false, false, false, false, false],
+        "mobility": 0,
+        "furcation": null,
+        "calculus": "none"
+      },
+      "geometry": { "rotationDeg": {"twist": 0, "tipMD": 0, "tipBL": 0}, "translationMm": {"x": 0.0, "y": 0.0, "z": 0.0}, "scale": 1.0 }
+    },
+    "17": {
+      "present": true,
+      "type": "third_molar",
+      "clinical": {
+        "conditions": [],
+        "probingDepth": [2, 2, 2, 2, 2, 2],
+        "recession":    [0, 0, 0, 0, 0, 0],
+        "cal":          [2, 2, 2, 2, 2, 2],
+        "bleeding":     [false, false, false, false, false, false],
+        "mobility": 0,
+        "furcation": null,
+        "calculus": "none"
+      },
+      "geometry": { "rotationDeg": {"twist": 0, "tipMD": 0, "tipBL": 0}, "translationMm": {"x": 0.0, "y": 0.0, "z": 0.0}, "scale": 1.0 }
+    },
+    "18": {
+      "present": true,
+      "type": "second_molar",
+      "clinical": {
+        "conditions": [],
+        "probingDepth": [2, 2, 2, 2, 2, 2],
+        "recession":    [0, 0, 0, 0, 0, 0],
+        "cal":          [2, 2, 2, 2, 2, 2],
+        "bleeding":     [false, false, false, false, false, false],
+        "mobility": 0,
+        "furcation": null,
+        "calculus": "none"
+      },
+      "geometry": { "rotationDeg": {"twist": 0, "tipMD": 0, "tipBL": 0}, "translationMm": {"x": 0.0, "y": 0.0, "z": 0.0}, "scale": 1.0 }
+    },
+    "19": {
+      "present": true,
+      "type": "first_molar",
+      "clinical": {
+        "conditions": [],
+        "probingDepth": [2, 2, 2, 2, 2, 2],
+        "recession":    [0, 0, 0, 0, 0, 0],
+        "cal":          [2, 2, 2, 2, 2, 2],
+        "bleeding":     [false, false, false, false, false, false],
+        "mobility": 0,
+        "furcation": null,
+        "calculus": "none"
+      },
+      "geometry": { "rotationDeg": {"twist": 0, "tipMD": 0, "tipBL": 0}, "translationMm": {"x": 0.0, "y": 0.0, "z": 0.0}, "scale": 1.0 }
+    },
+    "20": {
+      "present": true,
+      "type": "second_premolar",
+      "clinical": {
+        "conditions": [],
+        "probingDepth": [2, 2, 2, 2, 2, 2],
+        "recession":    [0, 0, 0, 0, 0, 0],
+        "cal":          [2, 2, 2, 2, 2, 2],
+        "bleeding":     [false, false, false, false, false, false],
+        "mobility": 0,
+        "furcation": null,
+        "calculus": "none"
+      },
+      "geometry": { "rotationDeg": {"twist": 0, "tipMD": 0, "tipBL": 0}, "translationMm": {"x": 0.0, "y": 0.0, "z": 0.0}, "scale": 1.0 }
+    },
+    "21": {
+      "present": true,
+      "type": "first_premolar",
+      "clinical": {
+        "conditions": [],
+        "probingDepth": [2, 2, 2, 2, 2, 2],
+        "recession":    [0, 0, 0, 0, 0, 0],
+        "cal":          [2, 2, 2, 2, 2, 2],
+        "bleeding":     [false, false, false, false, false, false],
+        "mobility": 0,
+        "furcation": null,
+        "calculus": "none"
+      },
+      "geometry": { "rotationDeg": {"twist": 0, "tipMD": 0, "tipBL": 0}, "translationMm": {"x": 0.0, "y": 0.0, "z": 0.0}, "scale": 1.0 }
+    },
+    "22": {
+      "present": true,
+      "type": "canine",
+      "clinical": {
+        "conditions": [],
+        "probingDepth": [2, 2, 2, 2, 2, 2],
+        "recession":    [0, 0, 0, 0, 0, 0],
+        "cal":          [2, 2, 2, 2, 2, 2],
+        "bleeding":     [false, false, false, false, false, false],
+        "mobility": 0,
+        "furcation": null,
+        "calculus": "none"
+      },
+      "geometry": { "rotationDeg": {"twist": 0, "tipMD": 0, "tipBL": 0}, "translationMm": {"x": 0.0, "y": 0.0, "z": 0.0}, "scale": 1.0 }
+    },
+    "23": {
+      "present": true,
+      "type": "lateral_incisor",
+      "clinical": {
+        "conditions": [],
+        "probingDepth": [2, 2, 2, 2, 2, 2],
+        "recession":    [0, 0, 0, 0, 0, 0],
+        "cal":          [2, 2, 2, 2, 2, 2],
+        "bleeding":     [false, false, false, false, false, false],
+        "mobility": 0,
+        "furcation": null,
+        "calculus": "none"
+      },
+      "geometry": { "rotationDeg": {"twist": 0, "tipMD": 0, "tipBL": 0}, "translationMm": {"x": 0.0, "y": 0.0, "z": 0.0}, "scale": 1.0 }
+    },
+    "24": {
+      "present": true,
+      "type": "central_incisor",
+      "clinical": {
+        "conditions": [],
+        "probingDepth": [2, 2, 2, 2, 2, 2],
+        "recession":    [0, 0, 0, 0, 0, 0],
+        "cal":          [2, 2, 2, 2, 2, 2],
+        "bleeding":     [false, false, false, false, false, false],
+        "mobility": 0,
+        "furcation": null,
+        "calculus": "none"
+      },
+      "geometry": { "rotationDeg": {"twist": 0, "tipMD": 0, "tipBL": 0}, "translationMm": {"x": 0.0, "y": 0.0, "z": 0.0}, "scale": 1.0 }
+    },
+    "25": {
+      "present": true,
+      "type": "central_incisor",
+      "clinical": {
+        "conditions": [],
+        "probingDepth": [2, 2, 2, 2, 2, 2],
+        "recession":    [0, 0, 0, 0, 0, 0],
+        "cal":          [2, 2, 2, 2, 2, 2],
+        "bleeding":     [false, false, false, false, false, false],
+        "mobility": 0,
+        "furcation": null,
+        "calculus": "none"
+      },
+      "geometry": { "rotationDeg": {"twist": 0, "tipMD": 0, "tipBL": 0}, "translationMm": {"x": 0.0, "y": 0.0, "z": 0.0}, "scale": 1.0 }
+    },
+    "26": {
+      "present": true,
+      "type": "lateral_incisor",
+      "clinical": {
+        "conditions": [],
+        "probingDepth": [2, 2, 2, 2, 2, 2],
+        "recession":    [0, 0, 0, 0, 0, 0],
+        "cal":          [2, 2, 2, 2, 2, 2],
+        "bleeding":     [false, false, false, false, false, false],
+        "mobility": 0,
+        "furcation": null,
+        "calculus": "none"
+      },
+      "geometry": { "rotationDeg": {"twist": 0, "tipMD": 0, "tipBL": 0}, "translationMm": {"x": 0.0, "y": 0.0, "z": 0.0}, "scale": 1.0 }
+    },
+    "27": {
+      "present": true,
+      "type": "canine",
+      "clinical": {
+        "conditions": [],
+        "probingDepth": [2, 2, 2, 2, 2, 2],
+        "recession":    [0, 0, 0, 0, 0, 0],
+        "cal":          [2, 2, 2, 2, 2, 2],
+        "bleeding":     [false, false, false, false, false, false],
+        "mobility": 0,
+        "furcation": null,
+        "calculus": "none"
+      },
+      "geometry": { "rotationDeg": {"twist": 0, "tipMD": 0, "tipBL": 0}, "translationMm": {"x": 0.0, "y": 0.0, "z": 0.0}, "scale": 1.0 }
+    },
+    "28": {
+      "present": true,
+      "type": "first_premolar",
+      "clinical": {
+        "conditions": [],
+        "probingDepth": [2, 2, 2, 2, 2, 2],
+        "recession":    [0, 0, 0, 0, 0, 0],
+        "cal":          [2, 2, 2, 2, 2, 2],
+        "bleeding":     [false, false, false, false, false, false],
+        "mobility": 0,
+        "furcation": null,
+        "calculus": "none"
+      },
+      "geometry": { "rotationDeg": {"twist": 0, "tipMD": 0, "tipBL": 0}, "translationMm": {"x": 0.0, "y": 0.0, "z": 0.0}, "scale": 1.0 }
+    },
+    "29": {
+      "present": true,
+      "type": "second_premolar",
+      "clinical": {
+        "conditions": [],
+        "probingDepth": [2, 2, 2, 2, 2, 2],
+        "recession":    [0, 0, 0, 0, 0, 0],
+        "cal":          [2, 2, 2, 2, 2, 2],
+        "bleeding":     [false, false, false, false, false, false],
+        "mobility": 0,
+        "furcation": null,
+        "calculus": "none"
+      },
+      "geometry": { "rotationDeg": {"twist": 0, "tipMD": 0, "tipBL": 0}, "translationMm": {"x": 0.0, "y": 0.0, "z": 0.0}, "scale": 1.0 }
+    },
+    "30": {
+      "present": true,
+      "type": "first_molar",
+      "clinical": {
+        "conditions": ["periodontitis"],
+        "probingDepth": [6, 5, 7, 6, 5, 6],
+        "recession":    [3, 3, 2, 2, 1, 1],
+        "cal":          [9, 8, 9, 8, 6, 7],
+        "bleeding":     [true, true, true, true, true, true],
+        "mobility": 2,
+        "furcation": "III",
+        "calculus": "heavy"
+      },
+      "geometry": { "rotationDeg": {"twist": 5, "tipMD": 0, "tipBL": 0}, "translationMm": {"x": 0.0, "y": 0.0, "z": 0.0}, "scale": 1.0 }
+    },
+    "31": {
+      "present": true,
+      "type": "second_molar",
+      "clinical": {
+        "conditions": [],
+        "probingDepth": [2, 2, 2, 2, 2, 2],
+        "recession":    [0, 0, 0, 0, 0, 0],
+        "cal":          [2, 2, 2, 2, 2, 2],
+        "bleeding":     [false, false, false, false, false, false],
+        "mobility": 0,
+        "furcation": null,
+        "calculus": "none"
+      },
+      "geometry": { "rotationDeg": {"twist": 0, "tipMD": 0, "tipBL": 0}, "translationMm": {"x": 0.0, "y": 0.0, "z": 0.0}, "scale": 1.0 }
+    },
+    "32": {
+      "present": true,
+      "type": "third_molar",
+      "clinical": {
+        "conditions": [],
+        "probingDepth": [2, 2, 2, 2, 2, 2],
+        "recession":    [0, 0, 0, 0, 0, 0],
+        "cal":          [2, 2, 2, 2, 2, 2],
+        "bleeding":     [false, false, false, false, false, false],
+        "mobility": 0,
+        "furcation": null,
+        "calculus": "none"
+      },
+      "geometry": { "rotationDeg": {"twist": 0, "tipMD": 0, "tipBL": 0}, "translationMm": {"x": 0.0, "y": 0.0, "z": 0.0}, "scale": 1.0 }
+    }
+  },
+  "session_context": {
+    "module": "perio_chart_reading",
+    "coaching_mode": "debrief",
+    "trigger_event": null,
+    "student_diagnosis": {
+      "classification": "gingivitis",
+      "extent": "generalized",
+      "stage": null,
+      "grade": null
+    },
+    "diagnosis_match": "incorrect",
+    "student_diagnosis_statement": "The student diagnosed this patient with generalized gingivitis."
+  },
+  "ai_response": "Incorrect \u2014 this is not gingivitis. Tooth #2 has probing depths up to 6mm with 6-7mm of clinical attachment loss and a Class II furcation, and tooth #30 is more advanced still \u2014 up to 7mm pockets, 9mm CAL, a Class III furcation, and Grade 2 mobility. Attachment loss and furcation involvement of that degree mean this is past gingivitis \u2014 it's periodontitis. Given the extent and severity across the chart, this diagnoses out to generalized Stage III, Grade B, consistent with the smoking history. Look again at #2, #3, and #30 specifically: what do the CAL numbers and furcation grades tell you about staging?",
+  "grading": {
+    "status": "ungraded",
+    "notes": ""
+  }
+}

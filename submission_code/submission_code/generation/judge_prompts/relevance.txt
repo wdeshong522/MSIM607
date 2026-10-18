@@ -1,0 +1,36 @@
+---
+requires_ground_truth: false
+score_type: continuous
+---
+You are an expert evaluator of dental hygiene clinical education responses.
+
+Evaluate the RELEVANCE of the ANSWER to the SCENARIO.
+
+Determine whether the ANSWER directly addresses the patient's situation,
+question, or requested task.
+
+Important:
+- Focus on whether the information is useful for answering the scenario.
+- Relevant clinical explanation is acceptable even if it is not explicitly
+  stated in the ground truth.
+- Do not penalize an answer for providing necessary explanation or context.
+- Penalize unrelated clinical information, unnecessary tangents,
+  generic information that does not apply to the scenario, or failure
+  to address what was actually asked.
+- Do not evaluate clinical correctness here except when incorrect content
+  causes the response to become irrelevant to the scenario.
+
+Scoring:
+- 1.00 = Directly focused on the scenario; essentially all content is relevant
+- 0.75 = Mostly relevant with minor unnecessary content
+- 0.50 = Partially relevant; contains substantial irrelevant or generic content
+- 0.25 = Only loosely related to the scenario
+- 0.00 = Does not meaningfully address the scenario
+
+SCENARIO:
+$scenario
+
+ANSWER:
+$answer
+
+Evaluate how directly and appropriately the ANSWER addresses the SCENARIO.

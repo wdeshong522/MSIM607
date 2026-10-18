@@ -1,0 +1,70 @@
+# Configuration for vLLM-backend generation (generate_judge_examples.py
+# --backend vllm). Maps each STUDY CONDITION (model x training-size) to
+# the served_name a running vLLM server registers it under via
+# --lora-modules. Updated 2026-09-23 for the 6-condition training-scale
+# study — the original version of this file only had one entry per base
+# model, from before that study design existed.
+#
+# served_name here MUST match exactly what generate_one_condition.sbatch
+# passes as --lora-modules when starting each condition's server, or
+# generate_judge_examples.py's registered-model check will skip it as
+# "not currently being served" even though a server is actually running.
+
+models:
+  granite-4.1-8B-n1000:
+    served_name: "granite-n1000"
+    base_model: "ibm-granite/granite-4.1-8b"
+    adapter_dir: "training/outputs/final/granite-4.1-8b__n1000"
+
+  granite-4.1-8B-n2000:
+    served_name: "granite-n2000"
+    base_model: "ibm-granite/granite-4.1-8b"
+    adapter_dir: "training/outputs/final/granite-4.1-8b__n2000"
+
+  granite-4.1-8B-nfull:
+    served_name: "granite-nfull"
+    base_model: "ibm-granite/granite-4.1-8b"
+    adapter_dir: "training/outputs/final/granite-4.1-8b__nfull"
+
+  qwen3-8B-n1000:
+    served_name: "qwen-n1000"
+    base_model: "Qwen/Qwen3-8B-Base"
+    adapter_dir: "training/outputs/final/qwen3-8b__n1000"
+    stop: ["<|im_end|>"]
+    # Two related, now-resolved issues (2026-09-23) — kept here for the
+    # record, not because either is still open:
+    # 1. Leading stray tokens (full-width digits, partial Thai text)
+    #    before clean content — a SEPARATE, still-cosmetic issue. Confirmed
+    #    NOT a Qwen3 reasoning-mode artifact (--reasoning-parser qwen3
+    #    makes it worse, emptying `content` entirely) — serve without that
+    #    flag. Not blocking; substantive content is intact regardless.
+    # 2. The real, serious issue: Qwen3-8B-Base ships eos_token=
+    #    '<|endoftext|>' by default, but this project's chat template
+    #    closes every turn with '<|im_end|>' — the fine-tuned model
+    #    correctly learns to emit '<|im_end|>' as its stop signal, but
+    #    vLLM never recognized it, so every response ran to the hard
+    #    max_tokens cap (100% truncation, confirmed in production use).
+    #    Under concurrent serving this caused sustained maximal KV-cache
+    #    pressure that OOM-killed the vLLM server mid-run. Editing the
+    #    adapter's local tokenizer_config.json/special_tokens_map.json did
+    #    NOT fix vLLM's actual stopping behavior (--model and --tokenizer
+    #    are separate sources here; vLLM's stop-token resolution stayed
+    #    tied to the --model source). The `stop` field above is the actual
+    #    fix — an explicit stop string in the request, which the
+    #    OpenAI-compatible API honors regardless of server-side default
+    #    resolution. lora_finetune_ray.py also now auto-corrects
+    #    eos_token at training time so future Qwen retrains don't
+    #    reintroduce issue #2, though this `stop` field remains the
+    #    guaranteed fix at serving time regardless.
+
+  qwen3-8B-n2000:
+    served_name: "qwen-n2000"
+    base_model: "Qwen/Qwen3-8B-Base"
+    adapter_dir: "training/outputs/final/qwen3-8b__n2000"
+    stop: ["<|im_end|>"]
+
+  qwen3-8B-nfull:
+    served_name: "qwen-nfull"
+    base_model: "Qwen/Qwen3-8B-Base"
+    adapter_dir: "training/outputs/final/qwen3-8b__nfull"
+    stop: ["<|im_end|>"]

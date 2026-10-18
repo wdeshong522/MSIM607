@@ -1,0 +1,21 @@
+# Stage 4 (alpha ratio sweep) baseline for Qwen3-8B.
+# lr/rank/target-modules carried forward from Stage 1-3 decisions.
+# Default lora_alpha (32, = 2x rank) is NOT retrained here - it's already
+# exactly Stage 3's attn+MLP baseline result; that run gets copied into
+# this stage's output folder instead of re-run. Only --lora_alpha 16 and
+# --lora_alpha 64 are actually submitted as new candidates.
+
+model_name:   Qwen/Qwen3-8B-Base
+data_dir:     ../data
+output_dir:   ./outputs/sweep/stage4_alpha_ratio/qwen3-8b
+
+epochs:       3
+batch_size:   1
+grad_accum:   8
+lr:           3e-4
+
+lora_r:       16
+lora_alpha:   32
+lora_dropout: 0.05
+
+max_seq_len:  2048

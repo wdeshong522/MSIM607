@@ -1,0 +1,21 @@
+# Stage 5 (epochs sweep) baseline for Granite-4.1-8B.
+# lr/rank/alpha/target-modules carried forward from Stage 1-4 decisions.
+# Default epochs=3 is NOT retrained here - it's already exactly Stage 4's
+# alpha=32 result (itself reused from Stage 3's attn+MLP baseline). That
+# run gets copied into this stage's output folder instead of re-run.
+# Only --epochs 2 and --epochs 4 are submitted as new candidates.
+
+model_name:   ibm-granite/granite-4.1-8b
+data_dir:     ../data
+output_dir:   ./outputs/sweep/stage5_epochs/granite-4.1-8b
+
+epochs:       3
+batch_size:   1
+grad_accum:   8
+lr:           3e-4
+
+lora_r:       16
+lora_alpha:   32
+lora_dropout: 0.05
+
+max_seq_len:  2048

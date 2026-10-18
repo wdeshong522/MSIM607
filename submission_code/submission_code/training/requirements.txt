@@ -1,0 +1,72 @@
+# DentalHygieneLLM — Full Pipeline (Training + Generation + Judging)
+# Python 3.11 required
+# Install with: pip install -r requirements.txt
+#
+# Note: Install PyTorch separately first:
+#   pip install torch==2.4.1 torchvision==0.19.1 torchaudio==2.4.1 \
+#       --index-url https://download.pytorch.org/whl/cu124
+#
+# TIER 1 (this file): Llama 3.2/3.3, Phi-4-mini, Granite 4.1, Qwen3
+#   - All load via AutoModelForCausalLM, same as your original registry.
+#   - Version bumps below are a starting estimate to unblock Phi-4-mini and
+#     Granite 4.1's model_type recognition — verify with a smoke-test load
+#     of each new model before committing to a full LoRA run.
+#
+# TIER 2 (NOT covered here — needs a separate env + code changes):
+#   - Ministral 3 (3B/8B/14B), Qwen3.5 (4B/9B/27B), Gemma 4 (E4B/12B)
+#   - These load via *ConditionalGeneration classes, not AutoModelForCausalLM.
+#   - Ministral 3 needs transformers>=5.0.0rc0
+#   - Qwen3.5 needs transformers>=5.2.0
+#   - Gemma 4 needs transformers>=5.5.0
+#   - transformers v5 is a breaking change from this file's 4.x line —
+#     peft/trl/accelerate would need their own version bumps too, and
+#     load_base_model() in lora_finetune.py needs a code path for
+#     conditional-generation classes. Don't try to unify this into one env.
+
+# --- Core ML ---
+torch==2.4.1
+torchvision==0.19.1
+torchaudio==2.4.1
+
+# --- Hugging Face stack ---
+transformers==4.51.0
+peft==0.14.0
+trl==0.13.0
+datasets>=2.21.0,<3.0
+accelerate==1.2.1
+tokenizers>=0.21,<0.22
+huggingface-hub>=0.30.0,<1.0
+safetensors==0.4.5
+
+# --- Quantization ---
+bitsandbytes==0.50.2
+
+# --- Data ---
+pyarrow==16.1.0
+sentencepiece
+numpy
+pandas
+
+# --- Config parsing ---
+# Used throughout generation/judging: study_config.py, ollama_pipeline.py,
+# judge_driver.py, generate_judge_examples.py, generate_new_scenarios.py
+pyyaml
+
+# --- LLM-judge scoring ---
+# score_judge_examples.py's BERTScore cross-check metric. Import is wrapped
+# in try/except in the script, but without this it silently skips
+# BERTScore rather than erroring — easy to miss.
+bert-score
+
+# --- Logging & monitoring ---
+tensorboard==2.17.0
+setuptools
+
+# --- Figures (plot_eval_loss.py — NIH R15 grant figure generator) ---
+matplotlib
+seaborn
+plotly
+
+# --- Utilities ---
+rich
+requests

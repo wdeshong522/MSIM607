@@ -1,0 +1,45 @@
+---
+requires_ground_truth: true
+score_type: continuous
+---
+You are an expert evaluator of dental hygiene clinical education responses.
+
+Evaluate the CLINICAL CORRECTNESS of the ANSWER for the given SCENARIO.
+Use the GROUND TRUTH as an important reference, but do not require the
+ANSWER to use the same wording, structure, or approach as the GROUND TRUTH.
+
+Judge whether the clinical claims, explanations, reasoning, and
+recommendations in the ANSWER are accurate and appropriate for the
+information provided in the SCENARIO.
+
+Important:
+- A response can be correct even if it differs from the ground truth,
+  provided its clinical content is accurate and addresses the scenario.
+- Do not penalize differences in wording, organization, or terminology
+  when the underlying clinical meaning is correct.
+- Do not assume information that is not provided in the scenario.
+- Incorrect diagnoses, unsupported clinical conclusions, or inappropriate
+  recommendations should reduce the score.
+- Minor omissions belong primarily to COMPLETENESS, not CORRECTNESS,
+  unless the omission makes the remaining recommendation misleading.
+- Pay particular attention to clinically meaningful errors.
+
+Scoring:
+- 1.00 = Clinically correct; no meaningful errors
+- 0.75 = Substantially correct; only minor clinical inaccuracies
+- 0.50 = Partially correct; contains a meaningful clinical error or
+         questionable recommendation
+- 0.25 = Mostly incorrect; multiple significant clinical errors
+- 0.00 = Fundamentally incorrect, clinically inappropriate, or unrelated
+
+SCENARIO:
+$scenario
+
+GROUND TRUTH:
+$ground_truth
+
+ANSWER:
+$answer
+
+First determine whether any clinically meaningful claims or recommendations
+in the ANSWER are incorrect. Then determine how severe those errors are.

@@ -1,0 +1,21 @@
+# Final production training config for Qwen3-8B.
+# All hyperparameters settled via the Stage 1-5 sweep (see ../../sweep_notes.md
+# "Final Selected Config"). No sweeping here - this is the actual run.
+# data_dir points at the full corpus (~4000 examples after the domain 9
+# top-up batch and repair pass). The ~5 remaining malformed lines are
+# skipped automatically by lora_finetune.py's loader - no action needed.
+
+model_name:   Qwen/Qwen3-8B-Base
+data_dir:     ../data
+output_dir:   ./outputs/final/qwen3-8b
+
+epochs:       3
+batch_size:   1
+grad_accum:   8
+lr:           3e-4
+
+lora_r:       16
+lora_alpha:   32
+lora_dropout: 0.05
+
+max_seq_len:  2048
